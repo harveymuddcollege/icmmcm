@@ -3,6 +3,7 @@
 % 
 %   icmmcm.cls -- A LaTeX class to produce reports for the ICM and MCM
 %                 contests
+%
 % $Id$
 
 % Copyright (C) 2003--2005  Claire M. Connelly and the Department of
@@ -28,7 +29,7 @@
 %
 % \fi
 %%
-%% icmcmc class file
+%% icmmcm class file
 %%
 
 \NeedsTeXFormat{LaTeX2e}
