@@ -45,7 +45,6 @@
 \RequirePackage{amsfonts}
 \RequirePackage{mathpazo}
 \RequirePackage{lastpage}
-\RequirePackage{bbold}
 \RequirePackage{xspace}
 \RequirePackage{verbatim}
 \RequirePackage{booktabs}
