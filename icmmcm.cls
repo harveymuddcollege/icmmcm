@@ -6,7 +6,7 @@
 %
 % $Id$
 
-% Copyright (C) 2003--2005  Claire M. Connelly and the Department of
+% Copyright (C) 2003--2012  Claire M. Connelly and the Department of
 %                           Mathematics, Harvey Mudd College 
 %
 %   This program is free software; you can redistribute it and/or
@@ -33,7 +33,7 @@
 %%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{icmmcm}[2005/10/11 ICM/MCM Contest Submission Class]
+\ProvidesClass{icmmcm}[2012/01/31 ICM/MCM Contest Submission Class]
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax %% <-- fix if we decide to declare some options!
 \LoadClass[11pt]{article}
