@@ -1088,64 +1088,77 @@ after the \com{caption} command.
 
 
 \subsection{Figures}
-
-\subsubsection{Including Graphics}%
 \label{sec:including-graphics}
 
-The \env{figure} environment is often used for including graphic
-images.  The state-of-the-art method requires you to load the
+Graphic images are included in your document in a \env{figure}
+environment.  The state-of-the-art method requires you to load the
 \package{graphics} or \package{graphicx} package.  Both packages
 provide the same functionality, but take arguments in a slightly
 different format.\footnote{The \package{graphicx} package defines
-  commands that take their arguments in key--value pairs.}  More
-information about the \texttt{graphics} package is available in its
-manual, \texttt{grfguide} \cite{carlisle-grfguide}, which is included
-in DVI, PostScript, or PDF format with most \TeX\ systems.
+  commands that take their arguments in key--value pairs, and is
+  the one that most people use; the \package{graphics} package is
+  often loaded by document classes to avoid forcing the key--value
+  argument form on people who don't want to use them.}  More
+information about the \package{graphics} and \package{graphicx}
+packages is available in its manual, \texttt{grfguide}
+\cite{carlisle-grfguide}, which is included in DVI, PostScript, or
+PDF format with most \TeX\ systems and accessible by typing
+\texttt{texdoc grfguide} at a shell prompt.
 
-The standard graphic format used with \TeX\ is called
-\emph{Encapsulated PostScript}, or EPS.  EPS files are special
-PostScript files that define their ``bounding box'', may include a
-bitmap representation for use in previewers, and are restricted from
-using some PostScript operators.
+Modern \TeX\ systems use PDF as their default output format, and
+expects that your included graphics will be in PDF format (for
+vector images) or PNG or JPEG format (for bitmaps).  Note that
+whenever possible you should try to save graphics in the vector
+PDF format, because they can be rescaled to any size without
+losing detail and can be rendered clearly both on screen and on
+paper.
+
+\emph{Encapsulated PostScript} or \emph{EPS} is an older format
+used by the old \LaTeX\ to DVI to PostScript toolchain.  EPS files
+are special PostScript files that define their ``bounding box'',
+may include a bitmap representation for use in previewers, and are
+restricted from using some PostScript operators.
 
 EPS files are generally created with a vector graphics application
 such as Adobe Illustrator, Dia, OmniGraffle, or Visio.  They can also
 be created from \TeX\ files using the \texttt{-E} flag with
-\prog{dvips}.
+\prog{dvips} or from \TeX\ code using an application such as
+\LaTeX{}iT.
 
-With the development of PDF\TeX, generating Portable Document Format
-files has become much easier.  PDF\TeX\ requires that your graphics
-are also PDF files (or PNGs, if they're bitmaps).  See
+With the development of PDF\TeX, which is now the default \TeX\
+engine, generating Portable Document Format files has become much
+easier.  PDF\TeX\ requires that your graphics are also PDF files
+(or PNGs, if they're bitmaps).  See
 Section~\ref{sec:pdftex-graphics} for some hints.
 
 Both formats use the same command, however: \com{includegraphics}.
 
 The following code produces the graphic in
-Figure~\ref{fig:an-eps-graphic}:
+Figure~\ref{fig:a-graphic}:
 \begin{verbatim}
-   \begin{figure}[ht]
+   \begin{figure}
      \begin{center}
        \scalebox{.50}{\includegraphics{shapes}}
      \end{center}
      \caption[Some shapes]{Some shapes.}%
-     \label{fig:an-eps-graphic}
+     \label{fig:a-graphic}
    \end{figure}
 \end{verbatim}
-\begin{figure}[ht]
+\begin{figure}
   \begin{center}
     \scalebox{.50}{\includegraphics{shapes}}
   \end{center}
   \caption[Some shapes]{Some shapes.}%
-  \label{fig:an-eps-graphic}
+  \label{fig:a-graphic}
 \end{figure}
 
-Notice that we didn't specify the \texttt{.eps} extension in the
-filename argument to the \com{includegraphics} command.  By dropping
-the extension, we can typeset this document with PDF\LaTeX\ by simply
-changing the driver argument in the line that loads the
-\package{graphics} package (provided that we have a PDF version of the
-graphic, of course).  The \com{includegraphics} package searches for
-different graphic formats depending on the driver it's using.
+Notice that we didn't specify the extension in the filename
+argument to the \com{includegraphics} command.  By dropping the
+extension, we can typeset this document with PDF\LaTeX\ or with
+the older toolchain (provided that we have graphics in the
+appropriate formats) by changing the commands that we run.  The
+\com{includegraphics} package searches for the graphic formats
+supported by the particular engine you're using.
 
 
 \subsubsection{\LaTeX\ Diagrams}
@@ -1306,38 +1319,12 @@ multiple ways to do both tasks.
 \subsection{Getting to Paper}
 
 Starting with a \latex document, \file{foo.tex}, you can create a
-PostScript file by running the following commands:
-\begin{quote}
-\begin{verbatim}
-unix% latex foo
-unix% dvips -o foo.ps foo
-unix% lpr foo.ps
-\end{verbatim}
-\end{quote}
-(On some systems, \prog{dvips} automatically prints your document to
-the default printer.  You need to specify the \prog{-o} flag to get a
-PostScript file on such systems.)
-
-
-\subsection{PDF for the Web}
-
-Starting with \file{foo.tex}, you can create a PostScript file by
-typing
+PDF file by running the following commands:
 \begin{quote}
 \begin{verbatim}
 unix% pdflatex foo
 \end{verbatim}
 \end{quote}
-or with the following sequence of commands:
-\begin{quote}
-\begin{verbatim}
-unix% latex foo
-unix% dvips -Ppdf foo -o foo.ps
-unix% ps2pdf foo.ps foo.pdf
-\end{verbatim}
-\end{quote}
-(The last step can be replaced by running the PostScript file through
-Adobe Acrobat Distiller.)
 
 
 \subsection{General Comments}
@@ -1509,12 +1496,12 @@ George Gr\"{a}tzer's \emph{Math into \LaTeX} includes a chapter on
 preparing books that covers this topic in depth.
 
 
-\subsection{Using Graphics with \pdftex}%
+\subsection{Updating EPS Graphics for Use With \pdftex}%
 \label{sec:pdftex-graphics}
 
-\pdftex supports PDF and JPEG as native graphic file formats.  EPS is
-not directly supported---to use EPS figures with \pdftex, you must
-first convert your EPS files to PDF.  
+\pdftex supports PDF, PNG, and JPEG as native graphic file
+formats.  EPS is not directly supported---to use EPS figures with
+\pdftex, you must first convert your EPS files to PDF.
 
 If you're using a graphics program such as Adobe Illustrator to
 prepare your figures, just save them as PDF instead of (or in addition
@@ -1533,8 +1520,7 @@ unix% epstopdf foo.eps > foo.pdf
 \end{quote}
 
 To convert a whole slew of files, you could use a command such as the
-following (with the csh):
-
+following (for the C-shell):
 \begin{quote}
 \begin{verbatim}
 unix% foreach f ( `find . -type f -name '*.eps'`)
