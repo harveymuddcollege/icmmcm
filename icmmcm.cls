@@ -4,27 +4,22 @@
 %   icmmcm.cls -- A LaTeX class to produce reports for the ICM and MCM
 %                 contests
 %
+%
+% Copyright (C) 2003-2016  Claire M. Connelly and the Department
+%                          of Mathematics, Harvey Mudd College.
+%
+% This work may be distributed and/or modified under the conditions of
+% the LaTeX Project Public License, either version 1.3 of this license
+% or (at your option) any later version.
 
-% Copyright (C) 2003--2016  Claire M. Connelly and the Department of
-%                           Mathematics, Harvey Mudd College 
-%
-%   This program is free software; you can redistribute it and/or
-%   modify it under the terms of the GNU General Public License as
-%   published by the Free Software Foundation; either version 2 of the
-%   License, or (at your option) any later version.
-%
-%   This program is distributed in the hope that it will be useful,
-%   but WITHOUT ANY WARRANTY; without even the implied warranty of
-%   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-%   GNU General Public License for more details. 
-%
-%   You should have received a copy of the GNU General Public License
-%   along with this program; if not, write to the Free Software
-%   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
-%   02111-1307  USA 
-%
-%   The license is also available on the web, from
-%      <http://www.gnu.org/copyleft/gpl.html>
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+
+% This work has the LPPL maintenance status `maintained'.
+
+% The Current Maintainer of this work is Claire M. Connelly.
 %
 % \fi
 %%
@@ -32,7 +27,7 @@
 %%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{icmmcm}[2012/01/31 ICM/MCM Contest Submission Class]
+\ProvidesClass{icmmcm}[2016/01/22 ICM/MCM Contest Submission Class]
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax %% <-- fix if we decide to declare some options!
 \LoadClass[11pt]{article}

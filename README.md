@@ -46,3 +46,48 @@ to file requests, and fork and submit pull requests to address
 issues you find.
 
 We appreciate your help in supporting MCM and ICM participants!
+
+
+## License ##
+
+The files in this repository are licensed to you for your use
+under two licenses, with some files using the
+[LPPL](http://www.latex-project.org/lppl/) and some using the
+[Unlicense](http://unlicense.org).
+
+
+### LaTeX Class and Supporting Files ###
+
+Copyright © 2016 Claire Connelly and the Harvey Mudd College
+Department of Mathematics.
+
+This work may be distributed and/or modified under the conditions
+of the LaTeX Project Public License, either version 1.3 of this
+license or (at your option) any later version.
+
+The latest version of this license is in
+http://www.latex-project.org/lppl.txt and version 1.3 or later is
+part of all distributions of LaTeX version 2005/12/01 or later.
+
+This work has the LPPL maintenance status `maintained'.
+
+The Current Maintainer of this work is Claire M. Connelly.
+
+This work consists of the files `icmmcm.cls`,
+`blank-template.tex`, and `icmmcm-sample.tex`.
+
+
+### Earlier Releases ###
+
+Earlier releases of the `icmmcm` class were made under the
+[GNU General Public License (GPL), version 2](http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html),
+and you are welcome to fork the project from that release point on
+under the GPL.
+
+
+### Sample Graphics and Bibliography Database Files ###
+
+The files `shapes.pdf`, `shapes.eps`, and `icmmcm.bib` are
+released into the public domain under the
+[Unlicense](http://unlicense.org).  See the file `UNLICENSE` in
+the repository for details of this license.
