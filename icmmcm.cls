@@ -4,9 +4,8 @@
 %   icmmcm.cls -- A LaTeX class to produce reports for the ICM and MCM
 %                 contests
 %
-% $Id$
 
-% Copyright (C) 2003--2012  Claire M. Connelly and the Department of
+% Copyright (C) 2003--2016  Claire M. Connelly and the Department of
 %                           Mathematics, Harvey Mudd College 
 %
 %   This program is free software; you can redistribute it and/or
